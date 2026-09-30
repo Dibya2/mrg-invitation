@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #5A456E;
+    --color-deep: #3E2C4A;
+    --color-light: #E9DDF0;
+    --color-white: #FFFFFF;
+    --color-gold: #D4AF70;
+    --color-gold-light: #F5E6C8;
+    --color-bg: #FBF9FC;
+    --color-text: #2D2433;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    overflow-x: hidden;
+    touch-action: manipulation;
+  }
+
+  h1, h2, h3, h4, .font-serif-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FBF9FC;
+}
+::-webkit-scrollbar-thumb {
+  background: #5A456E;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3E2C4A;
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #D4AF70 0%, #F5E6C8 50%, #B88E4B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 15px rgba(212, 175, 112, 0.25);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 112, 0.3);
+}
+
+.glass-card-dark {
+  background: rgba(62, 44, 74, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 112, 0.3);
+}
+
+/* Touch friendly minimums */
+button, a {
+  min-height: 44px;
+  min-width: 44px;
+}
